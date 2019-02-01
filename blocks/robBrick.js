@@ -459,6 +459,26 @@ Blockly.Blocks['robBrick_flame'] = {
     }
 };
 
+Blockly.Blocks['robBrick_augmentedreality'] = {
+    /**
+     * Represent an augmented reality sensor.
+     * 
+     * @constructs robBrick_augmentedreality
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_AUGMENTEDREALITY);
+        var ipAddress = new Blockly.FieldTextInput('192.168.178.20')
+        var port = new Blockly.FieldTextInput('48269')
+        this.appendDummyInput().appendField(Blockly.Msg.BRICK_IPADDRESS).appendField(ipAddress, 'IP_ADDRESS');
+        this.appendDummyInput().appendField(Blockly.Msg.BRICK_PORT).appendField(port, 'PORT');
+        this.setOutput(true, 'Sensor');
+        this.setTooltip(Blockly.Msg.AUGMENTEDREALITY_TOOLTIP);
+    }
+};
+
 Blockly.Blocks['robBrick_ambientlight'] = {
     /**
      * Represent an ambientlight sensor.
